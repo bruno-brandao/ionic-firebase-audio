@@ -1,0 +1,43 @@
+<ion-header>
+ 
+  <ion-navbar color="primary">
+    <ion-title>My Files</ion-title>
+  </ion-navbar>
+</ion-header>
+ 
+ 
+<ion-content>
+ 
+  <ion-card *ngFor="let file of files | async">
+    <ion-card-header>
+      {{ file.created | date:'medium' }}
+    </ion-card-header>
+ 
+    <ion-card-content>
+ 
+      <button ion-button block icon-left outline (click)="playAudio(file.url, i)"><!-- (click)="viewFile(file.url)"-->
+        <ion-icon name="play"></ion-icon>
+        {{ file.fullPath }}
+      </button>
+ 
+      <button ion-button block outline icon-left color="danger" (click)="deleteFile(file)">
+        <ion-icon name="trash"></ion-icon> Delete
+      </button>
+ 
+    </ion-card-content>
+ 
+  </ion-card>
+ 
+  <ion-fab right bottom>
+    <!-- <button ion-fab color="primary" (click)="addFile()">
+      <ion-icon name="cloud-upload"></ion-icon>
+    </button> -->
+    <button ion-fab  primary (click)="stopRecord()" *ngIf="recording">
+      <ion-icon name="mic-off"></ion-icon>
+    </button>
+    <button ion-fab  primary (click)="startRecord()" *ngIf="!recording">
+      <ion-icon name="mic"></ion-icon>
+    </button>
+  </ion-fab>
+   
+</ion-content>

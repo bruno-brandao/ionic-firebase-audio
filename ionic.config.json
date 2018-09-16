@@ -1,0 +1,7 @@
+{
+  "name": "devdacticFbStorage",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
