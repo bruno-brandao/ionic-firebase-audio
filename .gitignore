@@ -30,7 +30,7 @@ plugins/ios.json
 www/
 $RECYCLE.BIN/
 src/app/firebase-config.json
-
+package-lock.json
 .DS_Store
 Thumbs.db
 UserInterfaceState.xcuserstate
